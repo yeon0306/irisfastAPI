@@ -32,7 +32,7 @@ class IrisMatchineLearning:
     def predict_species(self, sl, sw, pl, pw):
         X_new = np.array([[sl, sw, pl, pw]])
         prediction = self.model_rfc.predict(X_new)
-        probability = self.model_rfc.predict_proba(X_new).max()
+        probability = self.model_rfc.predict_proba(X_new)
         print(f'{prediction}')
         print(f'{probability}')
         return prediction[0], probability
